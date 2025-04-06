@@ -11,26 +11,31 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "replicate.com",
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "replicate.delivery",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "*.replicate.delivery",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "pbxt.replicate.delivery",
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "firebasestorage.googleapis.com",
+        pathname: "/**",
       },
     ],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-  },
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: "https://api.openai.com/:path*",
-      },
-    ];
   },
 };
 
